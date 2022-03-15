@@ -6,16 +6,27 @@ import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import { Button } from 'react-native-elements/dist/buttons/Button';
 import { SwipeListView } from 'react-native-swipe-list-view';
 
+
+function cardClick(){
+    
+
+
+}
 export default function WeatherSearch({weather}){
-    const [wt,swt]=useState(weather)
+    const [weatherr,setWeather]=useState(...[weather])
+   
+    //   const del=(n)=> 
+    //   {
+    //     let update=wt.filter(w=>w.name!==n)
+    //     setWt(update)
+    // }
   
     // console.log(del('Agra'))
     
     return(
-        
     <ScrollView>
     {
-    wt.map((weatherData)=>{
+    weather.map((weatherData)=>{
          const [backgroundImage, setBackgroundImage] = useState(null);
              const { weather,
                      name,
@@ -55,13 +66,13 @@ export default function WeatherSearch({weather}){
                          source={backgroundImage}
                          style={styles.backgroundImg}
                      >
-                         <Button title='Delete' style={styles.button} onPress={(name)=>{
-                             swt(wt.filter(w=>w.name!==name))
-                        console.log(wt)
-                    }
-                    }
-                        ></Button>
-                         <TouchableOpacity style={styles.card} >
+                         <Button title='Delete' style={styles.button} onPress={()=>{
+                             const update=weatherr.filter(w=>w.name!==name);
+                             setWeather([...update])
+                             console.log(weatherr)
+                         }}
+                         ></Button>
+                         <TouchableOpacity style={styles.card} onPress={()=>{cardClick(weatherData)}}>
                          
                          <View style={styles.extraInfo}>
                              <Text style={{ ...styles.headerText, color: textColor, fontWeight: '900'}}>{name}</Text>
@@ -91,12 +102,7 @@ export default function WeatherSearch({weather}){
     )}
 </ScrollView>
     );
-    // function del(n){
-    //     const update=wt.filter(w=>w.name!==n)
-    //     console.log(wt);
-    //     console.log(n);
-    //     swt(update)
-    // }
+  
 }
 const styles = StyleSheet.create({
     button:{

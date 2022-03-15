@@ -6,7 +6,9 @@ import moment from'moment-timezone'
 export default ForecastScroll=({forecast})=>{
     // console.log(forecast.daily[1].temp.day)
     return(
+        
 <ScrollView style={styles.bg} horizontal={true}>
+    
 <FutureForcast data={forecast.daily[0]}/>
 <FutureForcast data={forecast.daily[1]}/>
 <FutureForcast data={forecast.daily[2]}/>

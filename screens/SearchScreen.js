@@ -33,7 +33,7 @@ export default function Home() {
         }
     }
     useEffect(() => {
-        fetchWeatherData('agra');
+        fetchWeatherData('Agra');
     }, [])
     // console.log(weather)
 
