@@ -13,7 +13,10 @@ export default function SearchBar({ weatherData, fetchWeatherData }) {
                 value={cityName}
                 onChangeText={(text) => setCityName(text)}
             />
-            <Button title='Search' size={28} color="black"  onPress={() => fetchWeatherData(cityName)}/>
+            <Button styles={{borderRadius:10,
+            borderColor:'black',
+            borderWidth:1
+            }}title='+' size={28} color="black"  onPress={() => fetchWeatherData(cityName)}/>
         </View>
     )
 }

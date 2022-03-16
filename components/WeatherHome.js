@@ -40,7 +40,7 @@ const [{ main }] = weather;
         return snow;  
     }
 
-    let textColor = backgroundImage !== sunny ? 'white' : 'black'
+    let textColor = backgroundImage !== clouds ? 'white' : 'black'
     // console.log(SettingsScreen.tempU);
     
     return (
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
         borderWidth:1,
         padding:20,
         margin:20,
-        marginBottom:100
+        marginBottom:20
     },
 });
   
