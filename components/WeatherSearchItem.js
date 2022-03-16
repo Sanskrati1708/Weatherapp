@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 // import { Icon } from 'react-native-elements';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 
@@ -14,12 +16,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {Button} from 'react-native-elements/dist/buttons/Button';
-
 export default function WeatherSearchItem({
   weatherData,
   getBackgroundImg,
   setWeather,
+  navigation
 }) {
+  // const {navigate}=navigation;
   const [backgroundImage, setBackgroundImage] = useState(null);
   const {
     weather,
@@ -30,6 +33,7 @@ export default function WeatherSearchItem({
   } = weatherData;
   const [{main}] = weather;
   let textColor = 'black';
+
 
   useEffect(() => {
     setBackgroundImage(getBackgroundImg(main));
@@ -45,7 +49,7 @@ export default function WeatherSearchItem({
             setWeather(wt => wt.filter(w => w.name !== name));
           }}
         />
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={()=>navigation.navigate("SearchStack",{lon:lon,lat:lat})}>
           <View style={styles.extraInfo}>
             <Text
               style={{
@@ -95,16 +99,16 @@ export default function WeatherSearchItem({
 
 const styles = StyleSheet.create({
   button: {
-    // backgroundColor: 'rgba(255,0,0,0.5)',
-    // borderRadius:50,
-    // borderColor:'white',
-    // borderWidth:1,
-    // padding:1,
-    // margin:4,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    borderColor:'white',
+    borderWidth:1,
+    padding:1,
+    margin:4,
     fontSize:10,
     color: 'red',
     textAlign: 'center',
     alignSelf: 'flex-end',
+    
 
 
 

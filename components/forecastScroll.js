@@ -16,7 +16,6 @@ export default ForecastScroll=({forecast})=>{
 <FutureForcast data={forecast.daily[4]}/>
 <FutureForcast data={forecast.daily[5]}/>
 <FutureForcast data={forecast.daily[6]}/>
-<FutureForcast data={forecast.daily[7]}/>
 </ScrollView>
     );
 }
@@ -46,7 +45,7 @@ backgroundColor:'rgba(0,0,0, 0.3)',
     main:{
         backgroundColor:'rgba(0,0,0,0.4)',
         color:'white',
-        fontSize:16,
+        fontSize:12,
         fontWeight:'bold',
         padding: 5,
         borderRadius:2,
@@ -73,7 +72,7 @@ backgroundColor:'rgba(0,0,0, 0.3)',
         borderWidth:1,
         borderColor:'white',
         borderRadius:5,
-        fontSize:20,
+        fontSize:14,
         color:'white',
        
         padding:10,
@@ -83,7 +82,7 @@ backgroundColor:'rgba(0,0,0, 0.3)',
     },
     temp:
     {
-fontSize:16,
+fontSize:12,
 color:'white',
 fontWeight:'500',
 textAlign:'center'

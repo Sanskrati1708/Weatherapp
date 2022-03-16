@@ -40,7 +40,7 @@ const [{ main }] = weather;
         return snow;  
     }
 
-    let textColor = backgroundImage !== clouds ? 'white' : 'black'
+    let textColor = 'black'
     // console.log(SettingsScreen.tempU);
     
     return (
@@ -52,21 +52,21 @@ const [{ main }] = weather;
                 resizeMode='cover'
             >
                 <View style={styles.content}>
-                 <View style={{alignItems:'center'}}>
-                    <Text style={{ ...styles.headerText, color: textColor, fontWeight: '900', fontSize: 20 }}>{name}</Text>
-                    <Text style={{ ...styles.headerText, color: textColor, fontWeight: '800', fontSize:22}}>{main}</Text>
+                 <View style={styles.mainInfo}>
+                    <Text style={{ ...styles.headerText, color: textColor, fontWeight: '900', fontSize: 18 }}>{name}</Text>
+                    <Text style={{ ...styles.headerText, color: textColor, fontWeight: '800', fontSize:20}}>{main}</Text>
                     <Text style={{ ...styles.headerText, color: textColor,fontWeight:'800'}}>{temp} °C</Text>
                 </View>
                 <View style={styles.info}>
-                        <Text style={{ fontSize: 15, color: 'white' ,fontWeight: '400'}}>Latitude: {lat}</Text>
-                        <Text style={{ fontSize: 15, color: 'white' ,fontWeight: '400'}}>Longitude: {lon}</Text>
-                        <Text style={{ fontSize: 15, color: 'white' ,fontWeight: '400'}}>Minimum Temperature: {temp_min}°C</Text>
-                        <Text style={{ fontSize: 15, color: 'white' ,fontWeight: '400'}}>Maximum Temperature: {temp_max}°C</Text>
+                        <Text style={{ fontSize: 13, color: 'white' ,fontWeight: '400'}}>Latitude: {lat}</Text>
+                        <Text style={{ fontSize: 13, color: 'white' ,fontWeight: '400'}}>Longitude: {lon}</Text>
+                        <Text style={{ fontSize: 13, color: 'white' ,fontWeight: '400'}}>Minimum Temperature: {temp_min}°C</Text>
+                        <Text style={{ fontSize: 13, color: 'white' ,fontWeight: '400'}}>Maximum Temperature: {temp_max}°C</Text>
 
-                        <Text style={{ fontSize: 15, color: 'white' ,fontWeight: '400'}}>Wind Speed: {speed} m/s</Text>
-                        <Text style={{ fontSize: 15, color: 'white' ,fontWeight: '400'}}>Pressure: {pressure}</Text>
+                        <Text style={{ fontSize: 13, color: 'white' ,fontWeight: '400'}}>Wind Speed: {speed} m/s</Text>
+                        <Text style={{ fontSize: 13, color: 'white' ,fontWeight: '400'}}>Pressure: {pressure}</Text>
 
-                        <Text style={{ fontSize: 15, color: 'white' ,fontWeight: '400'}}>Humidity: {humidity} m/s</Text>
+                        <Text style={{ fontSize: 13, color: 'white' ,fontWeight: '400'}}>Humidity: {humidity} m/s</Text>
                 </View>
                 
                 <ForecastScroll forecast={forecast}/>
@@ -82,6 +82,12 @@ const [{ main }] = weather;
 }
 
 const styles = StyleSheet.create({
+    mainInfo:{
+        alignItems:'center',
+        backgroundColor:'rgba(255,255,255, 0.6)',
+        padding:5,
+        marginTop:20,
+    },
     container: {
       flex: 1,
       backgroundColor: '#fff',
@@ -92,7 +98,7 @@ const styles = StyleSheet.create({
         width: Dimensions.get('screen').width
     },
     headerText: {
-        fontSize: 20,
+        fontSize: 18,
         marginTop: 10,
     },
     extraInfo: {
@@ -101,8 +107,8 @@ const styles = StyleSheet.create({
         borderRadius:10,
         borderColor:'white',
         borderWidth:1,
-        padding:20,
-        margin:20
+        padding:10,
+        margin:10
     },
     info: {
         justifyContent:"center",
@@ -111,8 +117,9 @@ const styles = StyleSheet.create({
         borderColor:'black',
         borderWidth:1,
         padding:20,
-        margin:20,
-        marginBottom:20
+        margin:10,
+        marginBottom:40,
+        marginTop:40
     },
 });
   

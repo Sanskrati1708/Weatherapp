@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet,Text,View,Image,TouchableOpacity } from 'react-native';
 import HomeScreen from '../screens/HomeScreen'
 import SearchScreen from '../screens/SearchScreen'
+import {cardNavigator} from './Stack';
 const Tab=createBottomTabNavigator();
 
 const Tabs=()=>{
@@ -38,7 +39,7 @@ const Tabs=()=>{
                     </View>
                 ),
             }}/>
-            <Tab.Screen name="Search" component={SearchScreen}
+            <Tab.Screen name="Search" component={cardNavigator}
             options={{
                 tabBarIcon:({focused})=>(
                     <View style={{alignItems:'center',

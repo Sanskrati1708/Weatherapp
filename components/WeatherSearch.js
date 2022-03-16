@@ -4,7 +4,7 @@ import {
   Text,
   ImageBackground,
   ScrollView,
-  Dimensions,
+  Dimensions
 } from 'react-native';
 import {StyleSheet} from 'react-native';
 import {
@@ -26,7 +26,7 @@ import {
 
 import WeatherSearchItem from './WeatherSearchItem.js';
 
-export default function WeatherSearch({weather, setWeather}) {
+export default function WeatherSearch({weather, setWeather,navigation}) {
   console.log('weather', weather);
   function getBackgroundImg(weather) {
     if (weather === 'Snow') {
@@ -81,6 +81,7 @@ export default function WeatherSearch({weather, setWeather}) {
           weatherData={weatherData}
           getBackgroundImg={getBackgroundImg}
           setWeather={setWeather}
+          navigation={navigation}
         />
       ))}
     </ScrollView>

@@ -6,7 +6,7 @@ import Toast from 'react-native-simple-toast';
 
 const API_KEY = '46a9246bebba16d42b36aac3fc3ba8af';
 
-export default function Home() {
+export default function Home({navigation}) {
   const [weather, setWeather] = useState([]);
 
   const [weatherData, setWeatherData] = useState(null);
@@ -31,7 +31,7 @@ export default function Home() {
     }
   }
   useEffect(() => {
-    fetchWeatherData('agra');
+    fetchWeatherData('Belanganj');
   }, []);
   // console.log(weather)
 
@@ -60,7 +60,7 @@ export default function Home() {
         weatherData={weatherData}
         fetchWeatherData={fetchWeatherData}
       />
-      <WeatherSearch weather={weather} setWeather={setWeather} />
+      <WeatherSearch weather={weather} setWeather={setWeather} navigation={navigation}/>
     </View>
   );
 }
